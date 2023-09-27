@@ -28,6 +28,8 @@ extern void processError(const char* szFile, const int line);
 // User-defined types
 //*************************************************************************
 
+#define PQ_SIZE 127
+
 typedef struct PriorityQueueElement
 {
 	int priority;
@@ -39,9 +41,8 @@ typedef PriorityQueueElement* PriorityQueueElementPtr;
 typedef struct PriorityQueue *PriorityQueuePtr;
 typedef struct PriorityQueue
 {
-	PriorityQueueElement* paTheList;
-	int numberOfItems;
-	int maxNumberOfItems;
+	PriorityQueueElement* paTheList[PQ_SIZE];
+	int currentNumberOfItems;
 	size_t itemSize;
 } PriorityQueue;
 
