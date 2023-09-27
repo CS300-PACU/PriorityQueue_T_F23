@@ -10,8 +10,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define NUMB_PQS 2
-
 typedef struct Process
 {
   int processID;
