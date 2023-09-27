@@ -5,10 +5,10 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "(lldb) pqdriverpublic", // Change name
+      "name": "(lldb) pqtester", // Change name
       "type": "lldb",
       "request": "launch",
-      "program": "${workspaceFolder}/bin/pqdriverpublic", // THIS IS IMPORTANT
+      "program": "${workspaceFolder}/bin/pqtester", // THIS IS IMPORTANT
       "args": [], // add comma separated list of args here.
       "cwd": "${workspaceFolder}",
       "preLaunchTask": "runMake", // THIS IS IMPORTANT
