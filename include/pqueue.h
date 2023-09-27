@@ -40,15 +40,16 @@ typedef struct PriorityQueue *PriorityQueuePtr;
 typedef struct PriorityQueue
 {
 	PriorityQueueElement* paTheList;
-	int items;
-	int maxSize;
+	int numberOfItems;
+	int maxNumberOfItems;
 	size_t itemSize;
 } PriorityQueue;
 
 //*************************************************************************
 //										Allocation and Deallocation
 //*************************************************************************
-extern void pqueueCreate (PriorityQueuePtr psQueue, size_t size, size_t itemSize);
+extern void pqueueCreate (PriorityQueuePtr psQueue, size_t maxNumberOfItems,
+ size_t itemSize);
 // results: If PQ can be created, then PQ exists and is empty
 
 
@@ -96,6 +97,7 @@ extern void *pqueuePeek (PriorityQueuePtr psQueue, void *pBuffer,
 extern void pqueueChangePriority (PriorityQueuePtr psQueue,
 																	int change);
 // results: The priority of all elements is increased by the amount in
+// change. Change may be positive or negative.
 
 #endif /* PQUEUE_H_ */
 
