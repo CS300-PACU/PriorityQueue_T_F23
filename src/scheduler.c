@@ -172,9 +172,8 @@ int main()
   FILE *pFile, *pActions;
   Process sProc;
   char action;
-  const int PQ_SIZE = 1000;
 
-  pqueueCreate(&sPQ, PQ_SIZE, sizeof(Process));
+  pqueueCreate(&sPQ, sizeof(Process));
   loadProcesses(&sPQ);
   
   pActions = fopen("data/actions.dat","r");
