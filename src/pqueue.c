@@ -31,3 +31,53 @@ void processError(const char* szFile, const int line)
   fflush(NULL);
   exit(EXIT_FAILURE);
 }
+
+
+void pqueueCreate (PriorityQueuePtr psQueue, size_t itemSize)
+{
+
+}
+
+void pqueueTerminate (PriorityQueuePtr psQueue)
+{
+
+}
+
+int pqueueCount (const PriorityQueuePtr psQueue)
+{
+
+}
+
+bool pqueueIsEmpty (const PriorityQueuePtr psQueue)
+{
+	return false;
+}
+
+bool pqueueIsFull(const PriorityQueuePtr psQueue)
+{
+	return false;
+}
+
+void pqueueEnqueue (PriorityQueuePtr psQueue, const void *pBuffer,
+										 int priority)
+{
+
+}
+
+void *pqueueDequeue (PriorityQueuePtr psQueue, void *pBuffer,
+														int  *pPriority)
+{
+	return NULL;
+}
+
+extern void *pqueuePeek (PriorityQueuePtr psQueue, void *pBuffer,
+								 int *priority)
+{
+	return NULL;
+}
+
+void pqueueChangePriority (PriorityQueuePtr psQueue,
+																	int change)
+{
+	
+}

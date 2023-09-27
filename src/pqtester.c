@@ -12,6 +12,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
+#include <math.h>
 
 #define assert(cond, trueMsg, falseMsg) \
 checkAssert(cond, trueMsg, falseMsg, __FILE__, __LINE__)
@@ -95,12 +96,11 @@ int main ()
 	int i;
 	const int MAX_ITEMS = 4;
 	const int PRIORITY_TWO = 2;
-	const int PQ_SIZE = 100;
 
 	puts ("Program Start\n");
 
 
-	pqueueCreate (&sThePQ, PQ_SIZE, sizeof(int));
+	pqueueCreate (&sThePQ, sizeof(int));
 	success ("PQ Create");
 
 	assert (pqueueCount (&sThePQ) == 0, "pqueueCount is 0",

@@ -49,8 +49,7 @@ typedef struct PriorityQueue
 //*************************************************************************
 //										Allocation and Deallocation
 //*************************************************************************
-extern void pqueueCreate (PriorityQueuePtr psQueue, size_t maxNumberOfItems,
- size_t itemSize);
+extern void pqueueCreate (PriorityQueuePtr psQueue, size_t itemSize);
 // results: If PQ can be created, then PQ exists and is empty
 
 
