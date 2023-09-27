@@ -1,5 +1,5 @@
 /****************************************************************************
- File name:  	pqdriverpublic.c
+ File name:  	pqtester.c
  Author:     	chadd williams
  Date:       	June 8, 2022
  Class:			 	CS 300
