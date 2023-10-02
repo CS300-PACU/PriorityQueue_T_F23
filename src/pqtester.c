@@ -99,9 +99,7 @@ int main ()
 
 	puts ("Program Start\n");
 
-
 	pqueueCreate (&sThePQ, sizeof(int));
-	success ("PQ Create");
 
 	assert (pqueueCount (&sThePQ) == 0, "pqueueCount is 0",
 																		 "pqueueCount is not 0");

@@ -45,7 +45,7 @@ void pqueueTerminate (PriorityQueuePtr psQueue)
 
 int pqueueCount (const PriorityQueuePtr psQueue)
 {
-
+	return 0;
 }
 
 bool pqueueIsEmpty (const PriorityQueuePtr psQueue)
@@ -70,7 +70,7 @@ void *pqueueDequeue (PriorityQueuePtr psQueue, void *pBuffer,
 	return NULL;
 }
 
-extern void *pqueuePeek (PriorityQueuePtr psQueue, void *pBuffer,
+void *pqueuePeek (PriorityQueuePtr psQueue, void *pBuffer,
 								 int *priority)
 {
 	return NULL;
