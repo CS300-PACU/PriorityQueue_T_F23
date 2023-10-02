@@ -67,5 +67,5 @@ valgrindScheduler: bin/scheduler
 	valgrind ${VALGRIND_FLAGS} bin/scheduler
 	
 
-# use valgrindScheduler as a guide
+# TODO: use valgrindScheduler as a guide
 valgrindTester:
