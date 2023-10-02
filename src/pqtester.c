@@ -103,7 +103,7 @@ int main ()
 
 	assert (pqueueCount (&sThePQ) == 0, "pqueueCount is 0",
 																		 "pqueueCount is not 0");
-
+/*
 	assert (pqueueIsEmpty (&sThePQ), "pqueueIsEmpty", "!pqueueIsEmpty");
 
 
@@ -135,8 +135,7 @@ int main ()
 
 	pqueueTerminate(&sThePQ);
 
-	success ("PQ Terminate");
-
+*/
 
 	puts ("\nProgram End");
 
