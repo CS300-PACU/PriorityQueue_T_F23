@@ -41,7 +41,7 @@ typedef PriorityQueueElement* PriorityQueueElementPtr;
 typedef struct PriorityQueue *PriorityQueuePtr;
 typedef struct PriorityQueue
 {
-	PriorityQueueElement* paTheList[PQ_SIZE];
+	PriorityQueueElement aTheList[PQ_SIZE];
 	int currentNumberOfItems;
 	size_t itemSize;
 } PriorityQueue;
