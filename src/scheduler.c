@@ -143,10 +143,8 @@ void loadProcesses(PriorityQueuePtr psPQ)
   Process sProc;
 
   pFile = fopen("data/processes.dat","r");
-	while(!feof(pFile))
+	while(EOF != fscanf(pFile, "%d %d",&sProc.processID, &runtime))
 	{
-		fscanf(pFile, "%d %d",&sProc.processID, &runtime);
-
     // TODO: Add the process to the PQ!
 
 	}
@@ -175,9 +173,8 @@ int main()
   loadProcesses(&sPQ);
   
   pActions = fopen("data/actions.dat","r");
-	while(!feof(pActions))
+	while(EOF != fscanf(pActions, "%c",&action))
 	{
-		fscanf(pActions, "%c",&action);
 
     switch(action)
     {
