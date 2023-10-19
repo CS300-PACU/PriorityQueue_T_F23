@@ -69,6 +69,7 @@ void printTop(PriorityQueuePtr psPQ)
  Function:    	runProcess
 
  Description: 	Run the process on the top of the PQ for the specified time
+ 		INCREASE the processes runtime by the parameter runtime
                 Reinsert the process into the PQ with the new runtime
 
  Parameters:  	psPQ - the Priority Queue
