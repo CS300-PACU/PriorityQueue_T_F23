@@ -7,13 +7,19 @@
 # Purpose:    Learn about makefiles!
 #############################################################################
 
-ENSCRIPT_FLAGS=-C -T 2 -p - -M Letter -Ecpp --color -fCourier8
-VALGRIND_FLAGS=-v --leak-check=yes --track-origins=yes --leak-check=full\
- --show-leak-kinds=all 
+CC=clang
+CFLAGS=-g -Wall
+VALGRIND_FLAGS=-v --leak-check=yes --track-origins=yes --leak-check=full \
+--show-leak-kinds=all
+ENSCRIPT_FLAGS=-C -T 2 -p - -M Letter --color -fCourier8
+
 
 TARGETS=bin/pqtester bin/scheduler
 
 all: ${TARGETS}
+
+bin/driverUtil.o: src/driverUtil.c include/driverUtil.h
+	${CC} ${CFLAGS} -c -o bin/driverUtil.o src/driverUtil.c 
 
 # DO NOT ALTER ANY CODE ABOVE THIS POINT EXCEPT THE COMMENT
 

@@ -8,77 +8,12 @@
  ****************************************************************************/
 
 #include "../include/pqueue.h"
+#include "../include/driverUtil.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
 #include <math.h>
-
-#define assert(cond, trueMsg, falseMsg) \
-checkAssert(cond, trueMsg, falseMsg, __FILE__, __LINE__)
-
-
-/****************************************************************************
- Function: 	 	success
-
- Description: print a success message
-
- Parameters:	szStr - the message to print
-
- Returned:	 	none
-****************************************************************************/
-static void success (char* szStr) {
-	printf ("SUCCESS: %s\n", szStr);
-}
-
-/****************************************************************************
- Function: 	 	failure
-
- Description: print a failure message
-
- Parameters:	szStr - the message to print
-
- Returned:	 	none
- ****************************************************************************/
-static void failure (char* szStr) {
-	printf ("FAILURE: %s\n", szStr);
-}
-
-/****************************************************************************
- Function: 	 	checkAssert
-
- Description: if the expression is true, assert success; otherwise, assert
-							failure
-							DO NOT CALL THIS FUNCTION DIRECTLY
-							use: assert(cond, trueMsg, falseMsg);
-
- Parameters:	szStr - the message to print
-
- Returned:	 	none
- ****************************************************************************/
-static void checkAssert (bool bExpression, char* pTrue, char* pFalse, 
-char *szFile, int line) {
-
-	char *pStr;
-	int fileAndLineLength;
-	const int SPACES = 5; // " - " ':' '\0'
-
-	fileAndLineLength = strlen(szFile) + (int) log(line);
-
-	if (bExpression) {
-		pStr = malloc(strlen(pTrue) + fileAndLineLength + SPACES);
-		sprintf(pStr, "%s - %s:%d", pTrue, szFile, line);
-		success (pStr);
-	}
-	else {
-		pStr = malloc(strlen(pFalse) + fileAndLineLength + SPACES);
-		sprintf(pStr, "%s - %s:%d", pFalse, szFile, line);
-		failure (pStr);
-	}
-	free(pStr);
-	fflush(NULL);
-}
-
 
 /****************************************************************************
  Function: 	 	main
@@ -101,10 +36,9 @@ int main ()
 
 	pqueueCreate (&sThePQ, sizeof(int));
 
-	assert (pqueueCount (&sThePQ) == 0, "pqueueCount is 0",
-																		 "pqueueCount is not 0");
+	assert (pqueueCount (&sThePQ) == 0, "pqueueCount is 0");
 /*
-	assert (pqueueIsEmpty (&sThePQ), "pqueueIsEmpty", "!pqueueIsEmpty");
+	assert (pqueueIsEmpty (&sThePQ), "pqueueIsEmpty");
 
 
 	// priority 0-3
@@ -113,8 +47,7 @@ int main ()
 		pqueueEnqueue (&sThePQ, &i,  i);
 	}
 
-	assert (MAX_ITEMS == pqueueCount (&sThePQ), "pqueueCount is correct",
-																		 "pqueueCount is not correct");
+	assert (MAX_ITEMS == pqueueCount (&sThePQ), "pqueueCount is correct");
 
 
 	// priority 0-3
@@ -124,14 +57,12 @@ int main ()
 
 		if( dataValue != i || priorityValue != i)
 		{
-			assert(dataValue == i && priorityValue == i, "",
-					"Priority 0-3 error");
+			assert(dataValue == i && priorityValue == i, "Priority 0-3 error");
 			printf("Priority: %d != %d \n", priorityValue, i);
 		}
 	}
 
-	assert (pqueueCount (&sThePQ) == 0, "pqueueCount is 0",
-																		 "pqueueCount is not 0");
+	assert (pqueueCount (&sThePQ) == 0, "pqueueCount is 0");
 
 	pqueueTerminate(&sThePQ);
 
