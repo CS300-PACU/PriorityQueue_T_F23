@@ -202,6 +202,7 @@ int main()
   fclose(pActions);
 
   emptyPQ(&sPQ);
+	pqueueTerminate(&sPQ);
 
   return EXIT_SUCCESS;
   
