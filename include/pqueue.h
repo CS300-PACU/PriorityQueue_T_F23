@@ -71,33 +71,36 @@ extern bool pqueueIsFull(const PriorityQueuePtr psQueue);
 //									Inserting and retrieving values
 //*************************************************************************
 
-extern void pqueueEnqueue (PriorityQueuePtr psQueue, const void *pBuffer,
+extern bool pqueueEnqueue (PriorityQueuePtr psQueue, const void *pBuffer,
 										 int priority);
 // requires: psQueue is not full
 // results: Insert the element into the priority queue based on the
-//          priority of the element.
+//          priority of the element. return true on success, false otherwise
 
-extern void *pqueueDequeue (PriorityQueuePtr psQueue, void *pBuffer,
+extern bool pqueueDequeue (PriorityQueuePtr psQueue, void *pBuffer,
 														int  *pPriority);
 
 // requires: psQueue is not empty
 // results: Remove the element from the front of a non-empty queue
+// return true on success, false otherwise
 
 //*************************************************************************
 //													Peek Operations
 //*************************************************************************
 
-extern void *pqueuePeek (PriorityQueuePtr psQueue, void *pBuffer,
+extern bool pqueuePeek (PriorityQueuePtr psQueue, void *pBuffer,
 								 int *priority);
 // requires: psQueue is not empty
 // results: The priority and value of the first element is returned through
 //					the argument list
+// return true on success, false otherwise
 // IMPORTANT: Do not remove element from the queue
 
-extern void pqueueChangePriority (PriorityQueuePtr psQueue,
+extern bool pqueueChangePriority (PriorityQueuePtr psQueue,
 																	int change);
 // results: The priority of all elements is increased by the amount in
 // change. Change may be positive or negative.
+// return true on success, false otherwise
 
 #endif /* PQUEUE_H_ */
 
