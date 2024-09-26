@@ -58,25 +58,25 @@ bool pqueueIsFull(const PriorityQueuePtr psQueue)
 	return false;
 }
 
-void pqueueEnqueue (PriorityQueuePtr psQueue, const void *pBuffer,
+bool pqueueEnqueue (PriorityQueuePtr psQueue, const void *pBuffer,
 										 int priority)
 {
 
 }
 
-void *pqueueDequeue (PriorityQueuePtr psQueue, void *pBuffer,
+bool pqueueDequeue (PriorityQueuePtr psQueue, void *pBuffer,
 														int  *pPriority)
 {
 	return NULL;
 }
 
-void *pqueuePeek (PriorityQueuePtr psQueue, void *pBuffer,
+bool pqueuePeek (PriorityQueuePtr psQueue, void *pBuffer,
 								 int *priority)
 {
 	return NULL;
 }
 
-void pqueueChangePriority (PriorityQueuePtr psQueue,
+bool pqueueChangePriority (PriorityQueuePtr psQueue,
 																	int change)
 {
 	
