@@ -31,6 +31,7 @@ int main ()
 	int i;
 	const int MAX_ITEMS = 4;
 	const int PRIORITY_TWO = 2;
+	bool bValidReturn;
 
 	puts ("Program Start\n");
 
@@ -44,7 +45,10 @@ int main ()
 	// priority 0-3
 	for( i = 0; i < MAX_ITEMS; ++i)
 	{
-		pqueueEnqueue (&sThePQ, &i,  i);
+		bValidReturn = pqueueEnqueue (&sThePQ, &i,  i);
+  		if (!bValidReturn) {
+    			assert(bValidReturn, "pqueueEnqueue, loop");
+       		}
 	}
 
 	assert (MAX_ITEMS == pqueueCount (&sThePQ), "pqueueCount is correct");
